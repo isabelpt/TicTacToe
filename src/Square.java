@@ -9,7 +9,7 @@ import java.awt.*;
  * location on the board, and whether it is part
  * of the winning set.
  *
- * @author: Nandhini Namasivayam
+ * @author: Nandhini Namasivayam, Isabel Prado-Tucker
  * @version: Jan 2023
  */
 
@@ -60,21 +60,27 @@ public class Square {
      * Calculates the dimensions of the square and draws border
      * If not empty, draws the image and if it is a winning square
      * makes it green
-     * @param g graphics object to draw on window
+     * @param g
      */
     public void draw(Graphics g) {
         g.setColor(Color.black);
+        // Calculate x and y values depending on row, col location
         int x = (window.BOARD_WIDTH / 3 * (row + 1)),
             y = (window.BOARD_WIDTH / 3 * (col + 1));
+        // Width and height are a third of the total 3x3 board
         int width = window.BOARD_WIDTH / 3,
             height = window.BOARD_HEIGHT / 3;
+        // Draw border around square to build grid
         g.drawRect(x, y, width, height);
+        // Don't continue if empty marker
         if (isEmpty()) return;
+        // If the square is a part of the winning arrangement
+        // fill it with green
         if(isWinningSquare) {
             g.setColor(Color.green);
             g.fillRect(x, y, width, height);
         }
-
+        // Display image 0 for x or image 1 for o
         Image icon = marker.equals("X") ? new ImageIcon(window.getIcons()[0]).getImage()
                 : new ImageIcon(window.getIcons()[1]).getImage();
         g.drawImage(icon, x, y, width, height, window);
