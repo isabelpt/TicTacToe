@@ -1,2 +1,2 @@
 # TicTacToe
-Starter Code for a TicTacToe UI Project in CS2
+AP CSA/CS2 TicTacToe UI Project 
