@@ -65,8 +65,8 @@ public class Square {
     public void draw(Graphics g) {
         g.setColor(Color.black);
         // Calculate x and y values depending on row, col location
-        int x = (window.BOARD_WIDTH / 3 * (row + 1)),
-            y = (window.BOARD_WIDTH / 3 * (col + 1));
+        int x = (window.BOARD_WIDTH / 3 * (col + 1)),
+            y = (window.BOARD_WIDTH / 3 * (row + 1));
         // Width and height are a third of the total 3x3 board
         int width = window.BOARD_WIDTH / 3,
             height = window.BOARD_HEIGHT / 3;
